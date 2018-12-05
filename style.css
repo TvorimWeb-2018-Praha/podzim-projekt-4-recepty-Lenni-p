@@ -10,9 +10,84 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-h2 {
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
+.doporucujeme{
+    display: flex;
+    flex-direction: column;
+}
+
+.sloupec{
+    display: flex;
+    flex-direction: column;
+}
+
+.recept, .hlavni-recept{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    min-height: 90px;
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+    border: white solid 1px;
+    border-collapse: collapse;
+}
+
+/* DOTAZ: 
+U responsivního designu cca na šířkách 490px a 890px (tj. na hraně přechodů) se mi stane,
+že se zalomí text "Chili rajčatová omáčka" na tři řádky,
+což způsobí roztažení příslušného obrázku 
+a následně vizuálně různou délku sloupců (ačkoliv reálně je stejná).
+Neumím obrázkům v posledním sloupci vysvětlit, aby se roztáhly stejně jako předchozí sloupec.
+Poradíte co s tím, resp. kde je chyba?
+Děkuji :)  */
+
+.hlavni-recept{
+    min-height: 200px;
+    font-size: 28px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                url('images/burger.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.recept-meta{
+    display: flex;
+    justify-content: space-between;
+}
+
+.recept-kategorie, .recept-komentare{
+    font-size: 14px;
+    font-weight: 400;
+    color: white;
+}
+
+.recept-nazev{
+    margin: 0%
+}
+
+.recept2{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/sushi.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.recept3{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/rajcata.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.recept4{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/kure.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.recept5{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('images/grilovani.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .paticka {
@@ -23,6 +98,55 @@ h2 {
 
 .paticka a {
     color: silver;
+}
+
+@media (min-width: 480px) {
+    .doporucujeme{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .sloupec{
+        width: 50%;
+    }
+
+    .recept{
+        padding: 20px;
+        min-height: 150px;
+        font-size: 22px;
+    }
+
+    .hlavni-recept{
+        width: 100%;
+        padding: 20px;
+        min-height: 250px;
+        font-size: 36px;
+    }
+
+}
+
+@media (min-width: 860px) {
+
+    .doporucujeme{
+        flex-direction: row;
+    }
+
+    .sloupec{
+        flex-direction: column;
+        width: 33.33%;
+    }
+
+    .recept{
+        min-height: 200px;
+        font-size: 28px;
+    }
+
+    .hlavni-recept{
+        min-height: 400px;
+        font-size: 48px;
+        width: 33.33%;
+    }
+
 }
 
 /* -------------------------------------------------- */
